@@ -27,7 +27,7 @@ d3.chart.architectureTree = function() {
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        d3.select(self.frameElement).style("height", "500px");
+        // d3.select(self.frameElement).style("height", "500px");
         
         var nodes = tree.nodes(treeData),
             links = tree.links(nodes);
@@ -143,7 +143,6 @@ d3.chart.architectureTree = function() {
      *
      * Mutates the given node (datum).
      *
-     * }
      */
     var addIndex = function(node) {
         node.index = {
@@ -151,7 +150,9 @@ d3.chart.architectureTree = function() {
             technos: [],
             hosts: []
         };
+
         var dependsOn = getDetailCascade(node, 'dependsOn');
+
         if (dependsOn.length > 0) {
             node.index.relatedNodes = node.index.relatedNodes.concat(dependsOn);
         }

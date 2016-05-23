@@ -82,5 +82,4 @@ angular.module('ChartsApp').controller('filterCtrl', function ($scope, bus) {
 
         return Object.keys(hosts).sort();
     }
-
 });
