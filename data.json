@@ -1,24 +1,24 @@
 {
-    "name": "Top Level",
+    "name": "Truck Driver",
     "parent": "null",
     "children": [
         {
-            "name": "Level 2: A",
-            "parent": "Top Level",
+            "name": "Get the Truck",
+            "parent": "Truck Driver",
             "children": [
                 {
-                    "name": "Son of A",
-                    "parent": "Level 2: A"
+                    "name": "Find a dude with a truck",
+                    "parent": "Get the Truck"
                 },
                 {
-                    "name": "Daughter of A",
-                    "parent": "Level 2: A"
+                    "name": "rob the bank for money",
+                    "parent": "Get the Truck"
                 }
             ]
         },
         {
-            "name": "Level 2: B",
-            "parent": "Top Level"
+            "name": "Build a truck",
+            "parent": "Truck Driver"
         }
     ]
 }

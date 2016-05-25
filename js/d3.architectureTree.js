@@ -10,25 +10,23 @@ d3.chart.architectureTree = function() {
         width = 960 - margin.right - margin.left,
         height = 500 - margin.top - margin.bottom;
 
-    var x0 = height / 2;
-    var y0 = 0;
-
     /**
      * Build the chart
      */
     function chart(){
 
-        tree = d3.layout.tree()
-            .size([height, width]);
+        if (typeof(tree) === 'undefined') {
+            tree = d3.layout.tree()
+                .size([height, width]);
 
-        svg = d3.select("body").append("svg")
-            .attr("width", width + margin.right + margin.left)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            svg = d3.select("body").append("svg")
+                .attr("width", width + margin.right + margin.left)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        }
 
-        // d3.select(self.frameElement).style("height", "500px");
-        
+
         var nodes = tree.nodes(treeData),
             links = tree.links(nodes);
 
@@ -46,6 +44,8 @@ d3.chart.architectureTree = function() {
      * @param {Array}  nodes
      */
     var updateData = function(container, nodes, links) {
+
+        console.log('updateData d3');
 
         // Enrich data
         addDependents(nodes);
