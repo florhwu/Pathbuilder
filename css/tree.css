@@ -1,5 +1,6 @@
 .node circle {
     stroke-width: 1.5px;
+    fill: #F2583E;
 }
 
 .node {
@@ -62,7 +63,7 @@
 
 .properties.edit .glyphicon {
     font-size: 12px;
-    color: #bce8f1;    
+    color: #D5E1DD;
 }
 
 .properties.edit .remove {
@@ -106,7 +107,7 @@
     font-weight: bold;
 }
 #node-active text {
-    fill: rgb(70, 130, 180);
+    fill: #F2583E;
 }
 
 #graph {
